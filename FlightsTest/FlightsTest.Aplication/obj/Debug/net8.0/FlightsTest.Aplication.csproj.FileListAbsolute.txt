@@ -1,0 +1,17 @@
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\bin\Debug\net8.0\FlightsTest.Aplication.deps.json
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\bin\Debug\net8.0\FlightsTest.Aplication.runtimeconfig.json
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\bin\Debug\net8.0\FlightsTest.Aplication.dll
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\bin\Debug\net8.0\FlightsTest.Aplication.pdb
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\bin\Debug\net8.0\FlightsTest.Domain.dll
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\bin\Debug\net8.0\FlightsTest.Domain.pdb
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.csproj.AssemblyReference.cache
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.AssemblyInfoInputs.cache
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.AssemblyInfo.cs
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.csproj.CoreCompileInputs.cache
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsT.3D4B036B.Up2Date
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.dll
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\refint\FlightsTest.Aplication.dll
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.pdb
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\FlightsTest.Aplication.genruntimeconfig.cache
+C:\AlejandraCuestaTest2\FlightsTest\FlightsTest.Aplication\obj\Debug\net8.0\ref\FlightsTest.Aplication.dll
