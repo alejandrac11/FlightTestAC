@@ -73,6 +73,7 @@ namespace FlightsTest.Infraestructure.Repositories
                         Destination = flight.Destination,
                         Price = flight.Price,
                         PriceCurrencyCode = flight.Price * rate,
+                        CurrencyCode = CurrencyCode,
                         TransportId = flight.TransportId,
                         Transport = flight.Transport.FlightCarrier + flight.Transport.FlightNumber
                     });
@@ -147,7 +148,7 @@ namespace FlightsTest.Infraestructure.Repositories
                 var path = new List<FlightDto>();
                 var visited = new HashSet<string>();
 
-                DFS(origin, destination, path, results, visited);
+                DestinationFlightSearch(origin, destination, path, results, visited);
 
                 foreach (var j in results)
                 {
@@ -164,7 +165,7 @@ namespace FlightsTest.Infraestructure.Repositories
             
         }
 
-        private void DFS(string current, string destination, List<FlightDto> path, List<Aplication.Dtos.JourneyDto> results, HashSet<string> visited)
+        private void DestinationFlightSearch(string current, string destination, List<FlightDto> path, List<Aplication.Dtos.JourneyDto> results, HashSet<string> visited)
         {
             try
             {
@@ -190,7 +191,7 @@ namespace FlightsTest.Infraestructure.Repositories
                     if (!visited.Contains(flight.Destination))
                     {
                         path.Add(flight);
-                        DFS(flight.Destination, destination, path, results, visited);
+                        DestinationFlightSearch(flight.Destination, destination, path, results, visited);
                         path.RemoveAt(path.Count - 1);
                     }
                 }
