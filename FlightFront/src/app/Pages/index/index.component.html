@@ -1,0 +1,157 @@
+<div
+  class="toast {{
+    showToast ? 'show' : ''
+  }} mt-2 align-items-center text-bg-danger border-0"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+>
+  <div class="d-flex">
+    <div class="toast-body">{{toastMessage}}</div>
+    <button
+      type="button"
+      class="btn-close btn-close-white me-2 m-auto"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+</div>
+
+<div class="container mt-5 centered-content">    
+  <div id="card-form" class="card">
+    <div class="card-body">
+      <h1 class="text-center">DCX</h1>
+      <form [formGroup]="formLocations">
+        <div class="row mt-3">
+          <div class="col">
+            <div class="form-floating">
+              <select
+                formControlName="sloOrigin"
+                required
+                class="form-select"
+                id="selectOrigin"
+                aria-label="Floating label select example"
+              >
+                <option selected disabled value="0">Select one</option>
+                <option
+                  *ngFor="let location of arrayLocations"
+                  [value]="location"
+                >
+                  {{ location }}
+                </option>
+              </select>
+              <label for="selectOrigin">Select Origin</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating">
+              <select
+                formControlName="sloDestination"
+                required
+                class="form-select"
+                id="selectDestination"
+                aria-label="Floating label select example"
+              >
+                <option selected disabled value="0">Select one</option>
+                <option
+                  *ngFor="let location of arrayLocations"
+                  [value]="location"
+                >
+                  {{ location }}
+                </option>
+              </select>
+              <label for="selectDestination">Select Destination</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="flightType" id="inlineRadio1" value="oneway">
+              <label class="form-check-label" for="inlineRadio1">OneWay</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="flightType" id="inlineRadio2" value="roundtrip">
+              <label class="form-check-label" for="inlineRadio2">Roundtrip</label>
+            </div>
+          </div>
+          <div class="col">
+            <select
+                formControlName="sloCurrency"
+                required
+                class="form-select"
+                id="selectCurrency"
+                aria-label="Floating label select example"
+              >
+              <option selected disabled value="0">Select a currency</option>
+
+                <option
+                  *ngFor="let currency of arrayCurrencies"
+                  [value]="currency"
+                >
+                  {{ currency }}
+                </option>
+              </select>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col text-center">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm btn-block"
+              (click)="findFlith()"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="flightsData.length > 0" class="row col-5 mx-auto mt-5">
+  <h2 class="text-center">DCX Results  Outbound Flights</h2>
+  <div *ngFor="let flightGroup of flightsData" class="flight-group mt-4">
+    <div class="card">
+      <div class="row col-12 card-body">
+        <div class="col-8">
+          <h3 class="card-title">{{flightGroup.origin}} - {{flightGroup.destination}}</h3>
+          <h5 class="card-title">{{flightGroup.costo | currency}} </h5>
+        </div>
+        <div class="col-4">
+          <div *ngFor="let flight of flightGroup.flights" class="flight mt-3 flight-info p-3 pb-4">
+            <p class="mb-0">{{flight.origin}} - {{flight.destination}}</p>
+            <p class="mb-0"><small>{{flight.currencyCode}} {{flight.priceCurrencyCode | currency}}</small></p>
+            <p class="transport-code">{{flight.transport}}</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="flightsReturnData.length > 0" class="row col-5 mx-auto mt-5">
+  <h2 class="text-center">DCX Results Return Flights</h2>
+  <div *ngFor="let flightGroup of flightsReturnData" class="flight-group mt-4">
+    <div class="card">
+      <div class="row col-12 card-body">
+        <div class="col-8">
+          <h3 class="card-title">{{flightGroup.origin}} - {{flightGroup.destination}}</h3>
+          <h5 class="card-title">{{flightGroup.costo | currency}} </h5>
+        </div>
+        <div class="col-4">
+          <div *ngFor="let flight of flightGroup.flights" class="flight mt-3 flight-info p-3 pb-4">
+            <p class="mb-0">{{flight.origin}} - {{flight.destination}}</p>
+            <p class="mb-0"><small>{{flight.currencyCode}} {{flight.priceCurrencyCode | currency}}</small></p>
+            <p class="transport-code">{{flight.transport}}</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
